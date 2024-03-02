@@ -1,4 +1,4 @@
-package com.nr.websocket_chat_app.user;
+package com.nr.websocket_chat_app.chatroom;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,15 +10,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
-@Document // create a mongo document
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class User {
+@Document
+public class ChatRoom {
 
   @Id
-  private String nickName;
+  private String id;
 
-  private String fullName;
-  private Status status;
+  private String chatID;
+
+  private String senderId;
+
+  private String recipientID;
 }
