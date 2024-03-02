@@ -10,17 +10,20 @@ public class UserService {
 
   private final UserRepository repository;
 
-  public void saveUser(User user) {
+  public User saveUser(User user) {
     user.setStatus(Status.ONLINE);
-    repository.save(user);
+    User savedUser = repository.save(user);
+    return savedUser;
   }
 
-  public void disconnect(User user) {
+  public User disconnect(User user) {
     var storedUser = repository.findById(user.getNickName()).orElse(null);
+    User updatedUser = null;
     if (storedUser != null) {
       storedUser.setStatus(Status.OFFLINE);
-      repository.save(storedUser);
+      updatedUser = repository.save(storedUser);
     }
+    return updatedUser;
   }
 
   public List<User> findConnectedUser() {
