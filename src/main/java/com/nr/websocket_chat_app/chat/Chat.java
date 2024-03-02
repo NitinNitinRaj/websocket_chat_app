@@ -1,5 +1,6 @@
-package com.nr.websocket_chat_app.chatroom;
+package com.nr.websocket_chat_app.chat;
 
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,7 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Builder
 @Document
-public class ChatRoom {
+public class Chat {
 
   @Id
   private String id;
@@ -24,4 +25,8 @@ public class ChatRoom {
   private String senderId;
 
   private String recipientId;
+
+  private String content;
+
+  private Date timeStamp;
 }

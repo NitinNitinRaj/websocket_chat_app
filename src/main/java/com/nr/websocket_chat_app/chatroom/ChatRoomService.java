@@ -32,14 +32,14 @@ public class ChatRoomService {
     ChatRoom senderRecipient = ChatRoom
       .builder()
       .chatId(chatId)
-      .recipientID(recipientId)
+      .recipientId(recipientId)
       .senderId(senderId)
       .build();
 
     ChatRoom recipientSender = ChatRoom
       .builder()
       .chatId(chatId)
-      .recipientID(senderId)
+      .recipientId(senderId)
       .senderId(recipientId)
       .build();
 
